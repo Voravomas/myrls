@@ -1,8 +1,8 @@
-# Lab 2 Option 3: Adder
+# Lab 4 myrls
 
 ## Team
 
- - [Volodymyr Chernetskyi](https://github.com/chernetskyi)
+ - [Mykyta Samovarov](https://github.com/Voravomas)
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ The rest prerequisites (such as development libraries) can be found in the [pack
 
 1. Clone the project.
     ```bash
-    git clone git@github.com:chernetskyi/cpp-template.git
+    git clone git@github.com/Voravomas/myrls
     ```
 2. Install required packages. On Ubuntu:
    ```bash
@@ -29,10 +29,15 @@ The rest prerequisites (such as development libraries) can be found in the [pack
 
 ## Usage
 
-```bash
-add [a] [b]
+```myrls
+myrls
+myrls ../
 ```
 
-If less than two numbers provided, zeroes are used instead. If more - an error occurs.
-
-Help flags `-h`/`--help` support is available.
+Description:
+	This program recursively prints content
+	of a file or a directory.
+	Only one path is allowed.
+Allowed options:
+  -h [ --help ]         Produce help message
+  --input-file arg      Enter file or directory
