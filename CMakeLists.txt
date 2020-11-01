@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(adder
-        VERSION 1.0.0
-        DESCRIPTION "Add two numbers"
-        HOMEPAGE_URL "https://github.com/chernetskyi/cpp-template"
+project(myrls
         LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
@@ -10,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 
 # Options
-option(WARNINGS_AS_ERRORS   "Treat compiler warnings as errors."    ON)
+option(WARNINGS_AS_ERRORS   "Treat compiler warnings as errors."    OFF)
 option(ENABLE_CONAN         "Use Conan as a package manager."       OFF)
 
 # ENABLE_PVS_STUDIO is the option for local usage only. PVS-Studio isn't installed on GitHub machines.
@@ -25,17 +22,14 @@ include(cmake/defaults.cmake)
 
 
 # Project source compilation
-include_directories(inc)
-add_library(arithmetic STATIC src/arithmetic/arithmetic.cpp inc/arithmetic/arithmetic.hpp)
-add_executable(add src/main.cpp)
-target_link_libraries(add arithmetic)
+add_executable(myrls src/main.cpp)
 
 
 # Add external packages
 set(Boost_USE_STATIC_LIBS ON)
-find_package(Boost 1.71.0 COMPONENTS program_options REQUIRED)
+find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
-target_link_libraries(add Boost::program_options)
+target_link_libraries(myrls Boost::program_options)
 
 
 # PVS-Studio configuration
