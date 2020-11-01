@@ -36,9 +36,7 @@ int recursive_print(const char* dirname, std::vector<mystat>* resVec, int deep) 
             std::string temp_abs_fn = std::string(dirname) + "/" + std::string(ep->d_name);
             //interchange "//" with "/" if it occurs
             if (temp_abs_fn.find("//") != std::string::npos){
-                std::cout << "Before: " << temp_abs_fn << std::endl;
                 temp_abs_fn.replace(temp_abs_fn.find("//"), 2, "/");
-                std::cout << "After: " << temp_abs_fn << std::endl;
             }
 
             std::strcpy(abs_filename, temp_abs_fn.c_str());
