@@ -22,7 +22,7 @@ include(cmake/defaults.cmake)
 
 
 # Project source compilation
-add_executable(myrls src/main.cpp)
+add_executable(myrls src/main.cpp header/file_manip.h src/file_manip.cpp header/minor.h src/minor.cpp header/printers.h src/printers.cpp header/structs.h header/primary.h src/primary.cpp)
 
 
 # Add external packages
